@@ -11,17 +11,17 @@ inputs.forEach( (item, index) => {
         if (!target.value) {
             item.classList.add("border-error");
             item.previousElementSibling.classList.add("text-error");
-            item.nextElementSibling.classList.remove("hidden")
+            item.nextElementSibling.classList.remove("hidden");
             item.nextElementSibling.classList.add("text-error");
         }else {
             if (target.value.length >= target.maxLength) {
-                target.value = target.value.slice(0, target.maxLength)
-                inputs[index +1]?.focus()
+                target.value = target.value.slice(0, target.maxLength);
+                inputs[index +1]?.focus();
             }
 
             item.classList.remove("border-error");
             item.previousElementSibling.classList.remove("text-error");
-            item.nextElementSibling.classList.add("hidden")
+            item.nextElementSibling.classList.add("hidden");
             item.nextElementSibling.classList.remove("text-error");
         }
 

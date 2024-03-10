@@ -35,20 +35,20 @@
 
     @layer base {
       input {
-        @apply border-2 h-10 text-xl rounded-md p-2 pl-4 outline-none focus:border-primary focus:text-primary;
+        @apply border-2 h-10 text-xl rounded-md p-2 pl-4 outline-none focus:border-primary focus:text-primary w-24;
       }
     }
 
     @layer components {
       .chalender {
-        @apply flex flex-col w-24 gap-1;
+        @apply flex flex-col lg:w-24 gap-1;
       }
     }
     }
 
     @layer components {
       .result {
-        @apply text-6xl font-black;
+        @apply lg:text-6xl text-5xl italic font-black;
       }
     }
 
@@ -64,8 +64,8 @@
 </head>
 <body class="flex justify-center items-center h-screen w-screen bg-[#f0f0f0] font-poppins">
 
-  <div class="wrapper bg-[#ffffff] w-[32rem] h-96 rounded-2xl rounded-br-[6rem] flex flex-col justify-evenly p-9">
-    <div class="flex items-start w-[cal(100%-6rem)] justify-start gap-4">
+  <div class="wrapper bg-[#ffffff]  w-86 lg:w-[32rem] h-96 lg:h-96 rounded-2xl rounded-br-[6rem] flex flex-col  justify-evenly p-6 pt-0 pb-0 lg:p-9">
+    <div class="flex items-start w-full lg:w-[cal(100%-6rem)] lg:justify-start justify-center lg:gap-4 gap-4">
       <div class="chalender">
         <label for="day">DAY</label>
         <input type="number" name="day" id="day" placeholder="DD" maxlength="2">
@@ -87,10 +87,11 @@
     </div>
 
     <div class="flex justify-center items-center">
-      <hr class="w-[calc(100%-3rem)] h-0.5 bg-[#dbdbdb]">
+      <hr class="lg:w-[calc(100%-3rem)] w-[calc(50%-1.5rem)] h-0.5 bg-[#dbdbdb]">
       <button class="rounded-full h-14 w-14 bg-primary flex justify-center items-center" id="calculate">
         <img src="./assets/images/icon-arrow.svg" alt="calculate" class="h-8 w-8">
       </button>
+      <hr class="w-[calc(50%-1.5rem)] h-0.5 bg-[#dbdbdb] lg:hidden">
     </div>
 
     <div>
