@@ -9,7 +9,7 @@
   <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
   <link href="https://fonts.googleapis.com/css2?family=Poppins:ital,wght@0,100;0,200;0,300;0,400;0,500;0,600;0,700;0,800;0,900;1,100;1,200;1,300;1,400;1,500;1,600;1,700;1,800;1,900&display=swap" rel="stylesheet">
 
-  <script src="https://cdn.tailwindcss.com"></script>
+  <script src="./tailwind.js"></script>
   <script>
     tailwind.config = {
       theme: {
@@ -35,7 +35,7 @@
 
     @layer base {
       input {
-        @apply border-2 h-10 text-xl rounded-md p-2 outline-none focus:border-primary focus:text-primary;
+        @apply border-2 h-10 text-xl rounded-md p-2 pl-4 outline-none focus:border-primary focus:text-primary;
       }
     }
 
@@ -65,32 +65,38 @@
 <body class="flex justify-center items-center h-screen w-screen bg-[#f0f0f0] font-poppins">
 
   <div class="wrapper bg-[#ffffff] w-[32rem] h-96 rounded-2xl rounded-br-[6rem] flex flex-col justify-evenly p-9">
-    <div class="flex items-center w-[cal(100%-6rem)] justify-start gap-4">
+    <div class="flex items-start w-[cal(100%-6rem)] justify-start gap-4">
       <div class="chalender">
         <label for="day">DAY</label>
-        <input type="number" name="day" id="day">
+        <input type="number" name="day" id="day" placeholder="DD" maxlength="2">
+        <p class="required-notice text-[0.6rem] m-0 hidden">This field is required</p>
+        <p class="required-notice text-[0.6rem] m-0 hidden">Must be a valid day</p>
       </div>
       <div class="chalender">
         <label for="month">MONTH</label>
-        <input type="number" name="month" id="month">
+        <input type="number" name="month" id="month" placeholder="MM" maxlength="2">
+        <p class="required-notice text-[0.6rem] m-0 hidden">This field is required</p>
+        <p class="required-notice text-[0.6rem] m-0 hidden">Must be a valid month</p>
       </div>
       <div class="chalender">
         <label for="year">YEAR</label>
-        <input type="number" name="year" id="year">
+        <input type="number" name="year" id="year" placeholder="YYYY" maxlength="4">
+        <p class="required-notice text-[0.6rem] m-0 hidden">This field is required</p>
+        <p class="required-notice text-[0.6rem] m-0 hidden">Must be in the past</p>
       </div>
     </div>
 
     <div class="flex justify-center items-center">
       <hr class="w-[calc(100%-3rem)] h-0.5 bg-[#dbdbdb]">
-      <div class="rounded-full h-14 w-14 bg-[#141414] flex justify-center items-center">
+      <button class="rounded-full h-14 w-14 bg-primary flex justify-center items-center" id="calculate">
         <img src="./assets/images/icon-arrow.svg" alt="calculate" class="h-8 w-8">
-      </div>
+      </button>
     </div>
 
     <div>
-    <p class="result"><span class="text-primary">- -</span> years</p>
-    <p class="result"><span class="text-primary">- -</span> months</p>
-    <p class="result"><span class="text-primary">- -</span> days</p>
+    <p class="result"><span class="text-primary" id="years-lived">- -</span> years</p>
+    <p class="result"><span class="text-primary" id="months-lived">- -</span> months</p>
+    <p class="result"><span class="text-primary" id="days-lived">- -</span> days</p>
   </div>
 
   </div>
@@ -99,5 +105,6 @@
     Challenge by <a href="https://www.frontendmentor.io?ref=challenge" target="_blank">Frontend Mentor</a>. 
     Coded by <a href="#">Your Name Here</a>.
   </div> -->
+<script src="./index.js"></script>
 </body>
 </html>
